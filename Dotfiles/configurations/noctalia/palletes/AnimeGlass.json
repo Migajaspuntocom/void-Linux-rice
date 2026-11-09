@@ -1,0 +1,30 @@
+
+{
+  "version": 2,
+  "dark": {
+    "primary": "#CBA6F7",
+    "on_primary": "#242331",
+
+    "secondary": "#A6DCCB",
+    "on_secondary": "#242331",
+
+    "tertiary": "#F38BA8",
+    "on_tertiary": "#242331",
+
+    "error": "#F38BA8",
+    "on_error": "#242331",
+
+    "surface": "#242331",
+    "on_surface": "#D8D6E8",
+
+    "on_surface_variant": "#B7B3CA",
+    "surface_container": "#383548",
+
+    "outline_variant": "#615A78",
+
+    "shadow": "#15131F",
+
+    "hover": "#45415C",
+    "on_hover": "#FFFFFF"
+  }
+}

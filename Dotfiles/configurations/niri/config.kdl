@@ -1,0 +1,154 @@
+
+// ========================================
+// VOID LINUX - NIRI
+// INTEL INTEGRATED GRAPHICS
+// 1366x768 - 8GB RAM
+// ========================================
+
+// Iniciar PipeWire en la sesión
+spawn-at-startup "pipewire"
+
+// Iniciar Noctalia
+spawn-at-startup "noctalia"
+
+// ========================================
+// VENTANAS
+// ========================================
+
+window-rule {
+    geometry-corner-radius 14
+    clip-to-geometry true
+}
+
+// Ghostty flotante
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+
+    open-floating true
+
+    default-column-width {
+        fixed 660
+    }
+
+    default-window-height {
+        fixed 330
+    }
+}
+
+// Ventana de ajustes Noctalia
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+
+    open-floating true
+}
+
+// ========================================
+// DISTRIBUCION
+// ========================================
+
+layout {
+    gaps 8
+
+    center-focused-column "never"
+
+    background-color "#242331"
+
+    border {
+        width 2
+        active-color "#CBA6F7"
+        inactive-color "#383548"
+    }
+
+    focus-ring {
+        off
+    }
+}
+
+// ========================================
+// ATAJOS
+// ========================================
+
+binds {
+    Mod+Return {
+        spawn "ghostty";
+    }
+
+    Mod+D {
+        spawn "fuzzel";
+    }
+
+    Mod+Space {
+        spawn-sh "noctalia msg panel-toggle launcher";
+    }
+
+    Mod+S {
+        spawn-sh "noctalia msg panel-toggle control-center";
+    }
+
+    Mod+Shift+Comma {
+        spawn-sh "noctalia msg settings-toggle";
+    }
+
+    Mod+Q {
+        close-window;
+    }
+
+    Mod+Shift+E {
+        quit;
+    }
+
+    XF86AudioRaiseVolume {
+        spawn-sh "noctalia msg volume-up";
+    }
+
+    XF86AudioLowerVolume {
+        spawn-sh "noctalia msg volume-down";
+    }
+
+    XF86AudioMute {
+        spawn-sh "noctalia msg volume-mute";
+    }
+
+    XF86MonBrightnessUp {
+        spawn-sh "noctalia msg brightness-up";
+    }
+
+    XF86MonBrightnessDown {
+        spawn-sh "noctalia msg brightness-down";
+    }
+}
+
+// ========================================
+// BLUR - NIRI 26.04+
+// ========================================
+
+window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+
+    background-effect {
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^noctalia-window-switcher$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+blur {
+    passes 2
+    offset 3.0
+    noise 0.02
+    saturation 1.0
+}

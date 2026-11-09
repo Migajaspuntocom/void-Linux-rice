@@ -1,0 +1,85 @@
+
+# ========================================
+# DESKTOP WIDGETS
+# 1366x768
+# ========================================
+
+[desktop_widgets]
+
+enabled = true
+schema_version = 2
+
+widget_order = [
+    "clock_main",
+    "audio_main"
+]
+
+# ========================================
+# CLOCK
+# ========================================
+
+[desktop_widgets.widget.clock_main]
+
+type = "clock"
+output = "eDP-1"
+
+cx = 1130.0
+cy = 575.0
+
+box_width = 380.0
+box_height = 160.0
+
+rotation = 0.0
+
+[desktop_widgets.widget.clock_main.settings]
+
+clock_style = "digital"
+format = "{:%H:%M}"
+
+color = "#A6DCCB"
+
+font_family = "Pixel Operator"
+
+shadow = true
+center_text = true
+
+background = true
+background_color = "#242331"
+background_opacity = 0.93
+background_radius = 20.0
+background_padding = 16.0
+
+# ========================================
+# AUDIO VISUALIZER
+# ========================================
+
+[desktop_widgets.widget.audio_main]
+
+type = "audio_visualizer"
+output = "eDP-1"
+
+cx = 510.0
+cy = 675.0
+
+box_width = 650.0
+box_height = 125.0
+
+rotation = 0.0
+
+[desktop_widgets.widget.audio_main.settings]
+
+bands = 24
+
+mirrored = false
+centered = false
+
+show_when_idle = true
+
+color_1 = "#A6DCCB"
+color_2 = "#CBA6F7"
+
+background = true
+background_color = "#242331"
+background_opacity = 0.90
+background_radius = 18.0
+background_padding = 12.0

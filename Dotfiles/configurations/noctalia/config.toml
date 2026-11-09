@@ -1,0 +1,95 @@
+
+# ========================================
+# ANIME GLASS - NOCTALIA V5
+# ========================================
+
+[theme]
+mode = "dark"
+shell_mode = "dark"
+
+source = "custom"
+custom_palette = "AnimeGlass"
+
+pure_black_dark = false
+terminal_colors = "standard"
+
+# ========================================
+# BARRA SUPERIOR
+# ========================================
+
+[bar]
+order = ["default"]
+
+[bar.default]
+
+enabled = true
+position = "top"
+
+thickness = 38
+
+auto_hide = false
+smart_auto_hide = false
+
+reserve_space = true
+
+background_opacity = 0.88
+compositor_blur = true
+
+border_width = 0.0
+
+radius = 12
+
+margin_ends = 70
+margin_edge = 3
+
+padding = 10
+widget_spacing = 5
+
+font_scale = 0.90
+font_weight = 500
+
+font_family = "JetBrainsMono Nerd Font"
+
+capsule = true
+capsule_fill = "surface_container"
+capsule_opacity = 0.86
+capsule_radius = 9
+
+start = [
+    "launcher",
+    "workspaces"
+]
+
+center = [
+    "clock"
+]
+
+end = [
+    "media",
+    "tray",
+    "notifications",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center"
+]
+
+# ========================================
+# WIDGETS DE LA BARRA
+# ========================================
+
+[widget.clock]
+format = "HH:mm"
+show_date = false
+
+[widget.workspaces]
+# Configurar desde Settings si se desea
+# personalizar el comportamiento.
+
+# ========================================
+# FUENTE GLOBAL
+# ========================================
+
+[shell]
+font_family = "JetBrainsMono Nerd Font"
